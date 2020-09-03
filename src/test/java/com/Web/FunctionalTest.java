@@ -16,16 +16,15 @@ public class FunctionalTest {
     @BeforeAll
     public static void beforeAll(){
 
-        //WebDriverManager.chromedriver().setup();
-        WebDriverManager.edgedriver().setup();
+        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.edgedriver().setup();
     }
 
     @BeforeEach
     public void setUp(){
 
-        //driver = new ChromeDriver();
-        driver = new EdgeDriver();
-
+        driver = new ChromeDriver();
+        //driver = new EdgeDriver();
     }
 
     @AfterEach
