@@ -6,6 +6,8 @@
 
 gradlew test
 
+(sometimes we have to execute "gradlew clean" first)
+
 ### Web
 
 This module includes 2 test cases for Web part. 

@@ -3,6 +3,7 @@ package com.Web;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -49,10 +50,11 @@ public class sunWingFlights extends PageObject {
                                 String adult,
                                 String child,
                                 String childAge) {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         this.Flight.click();
         this.OneWay.click();
-        this.DepartingFrom.click();
+        Actions builder = new Actions(driver);
+        builder.click(this.DepartingFrom).perform();
         String departingFromString =  "//*[(text()='" + departingFrom + "' or . = '" + departingFrom + "')]";
         WebElement elementFlyFrom = wait
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath( departingFromString )));

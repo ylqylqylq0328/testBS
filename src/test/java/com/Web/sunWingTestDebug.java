@@ -4,11 +4,10 @@ package com.Web;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class sunWingTestDebug extends FunctionalTest{
 
@@ -28,12 +27,11 @@ public class sunWingTestDebug extends FunctionalTest{
         //One Way
         driver.findElement(By.xpath("//*[text()='One way']")).click();
         //Depart From
-        driver.findElement(By.xpath("//form[@id='search-box-form-flights']/div/div/div[2]/div/i")).click();
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//*[(text() = 'Montreal (YUL)' or . = 'Montreal (YUL)')]")).click();
-        //WebElement elementFlyFrom = wait
-        //        .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[(text() = 'Montreal (YUL)' or . = 'Montreal (YUL)')]")));
-        //elementFlyFrom.click();
+        Actions builder = new Actions(driver);
+        builder.click(driver.findElement(By.xpath("//form[@id='search-box-form-flights']/div/div/div[2]/div/i"))).perform();
+        WebElement elementFlyFrom = wait
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[(text() = 'Montreal (YUL)' or . = 'Montreal (YUL)')]")));
+        elementFlyFrom.click();
         //Going To
         driver.findElement(By.xpath("//form[@id='search-box-form-flights']/div/div/div[3]/div/i")).click();
 
