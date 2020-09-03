@@ -1,0 +1,5 @@
+[0828/200129.675:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Tong\AppData\Local\Temp\scoped_dir134760_752931665\Crashpad\reports\c72a4ed5-dee5-43af-aa3e-a711a68433b0.dmp: The process cannot access the file because it is being used by another process. (0x20)
+[0828/200131.920:ERROR:process_info.cc(359)] UncheckedAllocate
+[0831/210744.348:ERROR:process_info.cc(359)] UncheckedAllocate
+[0831/210845.510:ERROR:process_info.cc(359)] UncheckedAllocate
+[0831/214805.820:ERROR:process_info.cc(359)] UncheckedAllocate
